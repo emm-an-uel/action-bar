@@ -10,23 +10,13 @@ import android.widget.TextView
 
 class MainActivity2 : AppCompatActivity() {
 
-    lateinit var tvFavColor: TextView
     lateinit var btnActivity1: Button
-    lateinit var color: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
 
-        tvFavColor = findViewById(R.id.tvFavColor)
         btnActivity1 = findViewById(R.id.btnActivity1)
-
-        // getting color from SettingsActivity
-        val bundle = intent.extras
-        if (bundle != null) {
-            color = bundle.getString("color")!!
-            tvFavColor.text = "Your favourite color is: $color"
-        }
 
         // go back to MainActivity
         btnActivity1.setOnClickListener {
